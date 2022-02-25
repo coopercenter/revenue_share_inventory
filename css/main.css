@@ -445,6 +445,11 @@ input{
   }
 }
 
+.narrative-text{
+  text-align: left;
+  padding: 10px 40px 0;
+}
+
 @media (max-width: 576px) {
   .container-table100 {
     padding-left: 15px;
