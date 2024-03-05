@@ -108,7 +108,7 @@ button:hover {
   padding: 20px 0;
   text-align: center;
   line-height: 40px;
-  font-size: 12px;
+  font-size: 14px;
   font-family: OpenSans-Regular;
 }
 
@@ -126,8 +126,8 @@ button:hover {
   padding: 20px 0 10px;
   margin: auto;
   font-family: OpenSans-Regular;
-  font-weight: 500;
-  font-size: 45px;
+  font-weight: 600;
+  font-size: 30px;
   width: 75%;
 }
 
