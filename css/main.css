@@ -264,9 +264,15 @@ tbody tr:hover {
 }
  
 .column2,
-.column4,
-.column6{
+.column4{
   width: 210px;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.column6{
+  width: 160px;
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
