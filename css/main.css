@@ -108,7 +108,7 @@ button:hover {
   padding: 20px 0;
   text-align: center;
   line-height: 40px;
-  font-size: 17px;
+  font-size: 12px;
   font-family: OpenSans-Regular;
 }
 
@@ -118,6 +118,7 @@ button:hover {
 
 .eti-logo{
   width: 450px;
+  height: 100px;
 }
 
 .main-header {
