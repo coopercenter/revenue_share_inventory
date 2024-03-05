@@ -108,7 +108,7 @@ button:hover {
   padding: 20px 0;
   text-align: center;
   line-height: 30px;
-  font-size: 25px;
+  font-size: 15px;
   font-family: OpenSans-Regular;
 }
 
@@ -127,7 +127,7 @@ button:hover {
   margin: auto;
   font-family: OpenSans-Regular;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 35px;
   width: 75%;
 }
 
@@ -257,7 +257,7 @@ tbody tr:hover {
 }
 
 .column3 {
-  width: 200px;
+  width: 250px;
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -272,7 +272,7 @@ tbody tr:hover {
 }
 
 .column6{
-  width: 160px;
+  width: 180px;
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
