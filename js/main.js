@@ -112,7 +112,6 @@ function clearSearch(){
     input.value = "";
 }
 
-
 function sortTableRowsByColumn( table, columnIndex, ascending ) {
     const rows = Array.from( table.querySelectorAll( ':scope > tbody > tr' ) );
     rows.sort( ( x, y ) => {
