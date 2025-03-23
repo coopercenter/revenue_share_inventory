@@ -20,6 +20,6 @@ Any changes made to the main branch are automatically pushed into the live serve
     __Working with GitHub in VS Code Tutorial__: [https://code.visualstudio.com/docs/sourcecontrol/github](https://code.visualstudio.com/docs/sourcecontrol/github)
 
 2. If you have not downloaded the _Live Server_ extension, download the extension to run a local development server. To use the extension, left-click on index.html and use _Open with Live Server_. 
-3. Make the additional needed changes to Revenue Share Inventory while checking the server perodically to ensure the changes made are successful
+3. Make the additional needed changes to Revenue Share Inventory while checking the server perodically to ensure the changes made are successful.
 4. When all needed changes have been made and the local server runs successfully, push all your changes to your respective dev branch. If using Git, in the command line, run `git add file_name` to add the file(s) that have been changed. Next, in the command line, run `git commit 'commit_name'` to name your commit and run `push origin -u 'branch_name` to push your changes to the dev branch.
 5. Merge your branch with the master branch to update the Revenue Share Inventory. 
