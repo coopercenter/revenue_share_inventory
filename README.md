@@ -8,9 +8,10 @@ __Revenue Share Inventory__: [https://coopercenter.github.io/revenue_share_inven
 ### Github
 
 ### Files 
-1. __index.html__
-4. __css__
-5. __.gitignore__ - File that tells Git to intentional ignore files that in this case contain sensitive information such as login creditionals which should not be pushed to the repository
+1. __index.html__ - The main HTML file that structures and contains the web application’s content.
+2. __css__ - Stylesheet used by index.html to design HTML elements including font size, position, and color. 
+3. __.gitignore__ - File that tells Git to intentional ignore files that in this case contain sensitive information such as login creditionals which should not be pushed to the repository.
+4. __main.js__ - A JavaScript file used by index.html to add interactivity, such as toggles, checkboxes, and dynamic coloring of elements.
 
 ## Development
 1. 
