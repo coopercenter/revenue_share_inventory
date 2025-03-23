@@ -15,6 +15,11 @@ Any changes made to the main branch are automatically pushed into the live serve
 4. __main.js__ - A JavaScript file used by index.html to add interactivity, such as toggles, checkboxes, and dynamic coloring of elements.
 
 ## Development
-1. 
-2. 
-3. 
+1. Clone the Revenue Share Inventory repository and create a new branch for development
+
+    __Working with GitHub in VS Code Tutorial__: (https://code.visualstudio.com/docs/sourcecontrol/github)[https://code.visualstudio.com/docs/sourcecontrol/github]
+
+2. If you have not downloaded the __Live Server__ extension, download the extension to run a local devellopment server. To use the extension, left-click on index.html and use Open with Live Server. 
+3. Make the additional needed changes to Revenue Share Inventory while checking the server perodically to ensure the changes made are successful
+4. When all needed changes have been made and the local server runs successfully, push all your changes to your respective dev branch. If using Git, in the command line, run `git add file_name` to add the file(s) that have been changed. Next, in the command line, run `git commit 'commit_name'` to name your commit and run `push origin -u 'branch_name` to push your changes to the dev branch.
+5. Merge your branch with the master branch to update the Revenue Share Inventory. 
