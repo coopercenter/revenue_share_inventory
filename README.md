@@ -6,6 +6,7 @@ __Revenue Share Inventory__: [https://coopercenter.github.io/revenue_share_inven
 
 ## Structure
 ### Github
+Any changes made to the main branch are automatically pushed into the live server that is hosted on GitHub Pages. Make sure changes are working properly before pushing to the master branch. Commit changes to branches other than master branch then merge when appropriate. Make sure you commit changes frequently to save changes to GitHub.
 
 ### Files 
 1. __index.html__ - The main HTML file that structures and contains the web application’s content.
