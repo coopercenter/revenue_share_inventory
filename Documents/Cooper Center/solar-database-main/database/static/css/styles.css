@@ -23,6 +23,8 @@
     text-decoration: none;
 }
 
+
+
 .form-select-format {
     width: 240px; 
     height: 28px;
@@ -166,4 +168,89 @@ li {
     color: #666666;
     font-weight: 500;
     font-size: 16px;
+}
+
+.hamburger-menu{
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  margin-top: 10px;
+  z-index: 1001;
+}
+
+.hamburger-menu span{
+  display: block;
+  width: 20px;
+  height: 3px;
+  background: white;
+  border-radius: 3px;
+}
+
+.items{
+  display: none;
+}
+
+@media (max-width: 993px){
+  .nav-item{
+    display: none;
+  }
+
+  .container-fluid{
+    margin: 0;
+
+  }
+  
+  .cooper_center_logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .cooper_center_logo img{
+    max-width: 100%;
+    height: auto;
+  }
+
+  .hamburger-menu{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    position: relative;
+    margin-right: 5px;
+  }
+
+  .items {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 220px;
+    background: white;
+    list-style: none;
+    padding: 60px 20px;
+    margin: 0;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1002;
+    display: flex;
+    flex-direction: column;
+  }
+/* 
+  .items.active{
+    transform: translateX(0);
+  } */
+
+  /* Hamburger animation */
+  .hamburger-menu.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
+  }
+  .hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger-menu.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
+  }
+
 }
