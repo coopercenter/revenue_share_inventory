@@ -2,7 +2,9 @@
 /* lowermost style layer for the nav bars from the Bootstrap css, edited to match CooperCenter website*/
 .navbar-dark{
     height: 60px;
-    width: 100vw;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
 }
 
 /* Adjust the background color to match the CooperCenter website from the Bootstrap default*/
@@ -40,6 +42,20 @@
     margin-bottom: 50px;
     background-color: #F2F4F8; 
     border: 1px transparent;
+}
+
+.card-body{
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+html, body{
+  max-width: 100%;
+  /* overflow-x: hidden; */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 p {
@@ -176,7 +192,17 @@ li {
   cursor: pointer;
   gap: 5px;
   margin-top: 10px;
-  z-index: 1001;
+  /* margin: 10px 0 0 10px; */
+  z-index: 1003;
+}
+
+.hamburger-menu:hover{
+  background-color: #3cc1cc;
+  padding: 5px;
+}
+
+.hamburger-menu span:hover{
+  background: white;
 }
 
 .hamburger-menu span{
@@ -185,6 +211,8 @@ li {
   height: 3px;
   background: white;
   border-radius: 3px;
+  transform-origin: center;
+  transition: transform 0.5s ease;
 }
 
 .items{
@@ -225,32 +253,33 @@ li {
     position: fixed;
     top: 0;
     right: 0;
-    height: 100vh;
-    width: 220px;
-    background: white;
+    height: relative;
+    width: 15vw;
+    background: #242e4c;
     list-style: none;
     padding: 60px 20px;
     margin: 0;
     transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.5s ease-in-out;
     z-index: 1002;
     display: flex;
     flex-direction: column;
   }
-/* 
+
   .items.active{
     transform: translateX(0);
-  } */
+  }
 
   /* Hamburger animation */
   .hamburger-menu.active span:nth-child(1) {
-    transform: rotate(45deg) translateY(8px);
+    transform: rotate(45deg) translate(5px, 5px);
   }
   .hamburger-menu.active span:nth-child(2) {
     opacity: 0;
   }
   .hamburger-menu.active span:nth-child(3) {
-    transform: rotate(-45deg) translateY(-8px);
+    transform: rotate(-45deg) translate(6px, -6px);
   }
+  
 
 }
