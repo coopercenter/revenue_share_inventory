@@ -230,13 +230,7 @@
     background-color: #d4d4d4;
   }
   
-  
-  
-  
-  
-  /* tbody tr:nth-child(even) {
-    background-color: #f5f5f5;
-  } */
+
   
   tbody tr {
     font-family: OpenSans-Regular;
@@ -303,42 +297,7 @@
     padding-top: 10px;
     padding-bottom: 10px;
   }
-  
-  /* .column5{
-    width: 250px;
-    text-align: center;
-  } */
-  
-  /* .column2 {
-    width: 200px;
-  }
-  
-  .column3 {
-    width: 200px;
-  }
-  
-  .column4 {
-    width: 200px;
-    text-align: right;
-  }
-  
-  .column5 {
-    width: 200px;
-    text-align: right;
-  }
-  
-  .column6 {
-    width: 200px;
-    text-align: right;
-    /* padding-right: 62px; */
-  /* }
-  
-  .column7 {
-    text-align: right;
-    width: 200px;
-    padding-right: 20px;
-  } */
-  
+
   #myInput {
     width: 250px;
     font-size: 16px;
@@ -353,31 +312,8 @@
     line-height: 2rem;
     margin-top: 20px;
   }
-  .dropdown{
-    right: auto; 
-    float: right;
-    margin-right: 33px;
-  }
-  
-  .dropdown-menu{
-    width: 250px;
-  }
-  .dropdown-menu li{
-    line-height: 20px;
-  }
-  
-  #deselect_checkboxes{
-    margin: 0 0 5px 15px;
-    display: none;
-  }
-  
-  #mySearchInput{
-    padding-left: 5px;
-    margin: 5px 0 10px 15px;
-    border: black solid 1px;
-    border-radius: 5px;
-  }
-  
+
+
   input{
     display: inline-block;
   }
@@ -482,3 +418,4 @@
       padding-right: 15px;
     }
   }
+

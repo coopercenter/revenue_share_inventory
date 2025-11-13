@@ -231,3 +231,41 @@ function correctColoring(){
 
 eventListenerCheckboxes();
 correctColoring();
+
+
+// Update button text and style based on checkbox states
+function updateToggleButton() {
+  const checkboxes = document.querySelectorAll('.form-check-input');
+  const toggleBtn = document.getElementById('toggle_checkboxes');
+  const anyChecked = Array.from(checkboxes).some(cb => cb.checked);
+  
+  if (anyChecked) {
+    toggleBtn.textContent = 'Deselect All';
+    toggleBtn.className = 'btn btn-sm btn-danger';
+  } else {
+    toggleBtn.textContent = 'Select All';
+    toggleBtn.className = 'btn btn-sm btn-success';
+  }
+}
+
+function toggleCheckboxes(event) {
+    if (event){
+        event.stopPropagation();
+        event.preventDefault();
+    }
+    const checkboxes = document.querySelectorAll('.form-check-input');
+    const anyChecked = Array.from(checkboxes).some(cb => cb.checked);
+    
+    checkboxes.forEach(cb => cb.checked = !anyChecked);
+    updateToggleButton();
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Wait for Papa Parse to finish loading the data
+  setTimeout(() => {
+    const checkboxes = document.querySelectorAll('.form-check-input');
+    checkboxes.forEach(cb => {
+      cb.addEventListener('change', updateToggleButton);
+    });
+  }, 500);
+});
