@@ -86,26 +86,26 @@
   }
 
   /* Search input within dropdown */
-  #mySearchInput{
+  .locality-search{
     width: calc(100% - 30px);
     padding: 8px 12px;
     margin: 5px 15px 15px 15px;
-    border: 2px solid #094b07;
+    border: 1px solid #094b07;
     border-radius: 6px;
     font-size: 14px;
     font-family: OpenSans-Regular;
     transition: border-color 0.3s ease;
   }
 
-  #mySearchInput:focus {
-    outline: none;
-    border-color: rgb(93, 174, 116);
-    box-shadow: 0 0 0 3px rgba(9, 75, 7, 0.1);
+  .locality-search:focus {
+    border: 1px solid #094b07 !important;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
 
   /* Toggle button (Select All / Deselect All) */
   #toggle_checkboxes{
-    margin: 0 15px 10px 15px;
+    margin: 0 15px 10px 6px;
     padding: 6px 16px;
     border-radius: 5px;
     font-size: 14px;
@@ -114,6 +114,12 @@
     border: none;
     transition: all 0.3s ease;
   }
+
+  #toggle_checkboxes{
+    margin-left: 30%;
+    display: block;
+  }
+
 
   /* Green state for Select All */
   #toggle_checkboxes.btn-success {
@@ -135,6 +141,10 @@
     background-color: #c82333;
     transform: translateY(-1px);
     box-shadow: 0 2px 6px rgba(220, 53, 69, 0.3);
+  }
+
+  #toggle_checkboxes.btn-hide {
+    display: none;
   }
 
   #toggle_checkboxes:active {

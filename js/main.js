@@ -1,50 +1,42 @@
-
 (function ($) {
     "use strict";
 })(jQuery);
 
-function myFunction() {
-    // Declare variables
-    clearCheckboxes();
-    var input, filter, table, tr, td, i, txtValue;
-    input = document.getElementById("myInput");
-    filter = input.value.toUpperCase();
-    table = document.getElementById("data-table");
-    tr = table.getElementsByTagName("tr");
-  
-    // Loop through all table rows, and hide those who don't match the search query
-    for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[0];
-        if (td) {
-            txtValue = td.title
-            if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                tr[i].style.display = "";
-            } else {
-                tr[i].style.display = "none";
-            }
+function tableSearch(){
+    const searchTerm = document.getElementById('table-search').value.toLowerCase();
+    const rows = document.querySelectorAll('#table-body tr');
+
+
+    rows.forEach(row => {
+        const text = row.textContent.toLowerCase();
+        if (text.includes(searchTerm)){
+            row.style.display = '';
         }
-    }
+        else{
+            row.style.display = 'none';
+        }
+    });
+
     correctColoring();
+
 }
 
-function mySearchFunction(){
-    var input = document.getElementById("mySearchInput");
-    var filter = input.value.toUpperCase();
-    var search_bar = document.getElementById("select_locality");
-    var li = search_bar.getElementsByTagName("li");
-
-    for (i = 0; i < li.length; i++){
-        var textValue = li[i].innerText
-        if(textValue){
-            if (textValue.toUpperCase().indexOf(filter) > -1) {
-                li[i].style.display = "";
-            } else {
-                li[i].style.display = "none";
-            }
+function localitySearch() {
+    const searchTerm = document.getElementById('locality-checkbox').value.toLowerCase();
+    const localityDropdown = document.getElementById('locality-dropdown');
+    const checkboxItems = localityDropdown.querySelectorAll('li.locality-dropdown');
+    
+    checkboxItems.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        
+        if (text.includes(searchTerm)) {
+            item.style.display = '';
+        } else {
+            item.style.display = 'none';
         }
-    }
-    correctColoring();
+    });
 }
+
 
 function eventListenerCheckboxes(){
     var list = document.getElementById("select_locality");
@@ -58,15 +50,15 @@ function updateTable(){
     clearSearch();
     var list = document.getElementById("select_locality");
     var checkedList = list.getElementsByClassName("form-check-input");
-    var tr = document.getElementById("data-table").getElementsByTagName("tr");
-    var deselect_button = document.getElementById("deselect_checkboxes");
+    var tr = document.getElementById("table-body").getElementsByTagName("tr");
     var checkedLocalities = new Set();
     var numChecked = 0;
 
     for(i = 0; i < checkedList.length; i++){
         if(checkedList[i].checked){
             numChecked += 1;
-            checkedLocalities.add(checkedList[i].parentElement.innerText.substring(1))
+            var localityText = checkedList[i].parentElement.innerText.trim();
+            checkedLocalities.add(localityText);
         }
     }
     if (numChecked != 0) {
@@ -81,13 +73,11 @@ function updateTable(){
                 }
             }
         }
-        deselect_button.style.display = "inline";
     }
     if (numChecked == 0){
         for( i = 0; i < tr.length; i++){
             tr[i].style.display = "";
         }
-        deselect_button.style.display = "none";
     }
     correctColoring();
 }
@@ -96,19 +86,20 @@ function clearCheckboxes(){
     var list = document.getElementById("select_locality");
     var checkedList = list.getElementsByClassName("form-check-input");
     var tr = document.getElementById("data-table").getElementsByTagName("tr");
-    var deselect_button = document.getElementById("deselect_checkboxes");
 
     for(i = 0; i < checkedList.length; i++){
         checkedList[i].checked = false;
+    }
+    
+    for(i = 0; i < tr.length; i++){
         tr[i].style.display = "";
     }
 
-    deselect_button.style.display = "none";
     correctColoring();
 }
 
 function clearSearch(){
-    input = document.getElementById("myInput");
+    input = document.getElementById("find-locality"); 
     input.value = "";
 }
 
@@ -193,15 +184,6 @@ function onColumnHeaderClicked( ev ) {
         row.children[thIndex].classList.add('highlight-column');
     });
 
-    // colind = th.innerText.indexOf('↑') || th.innerText.indexOf('↓')
-    // test = th.innerText.split(/[↑↓]/)
-    // columnName = test[0]
-    // if(columnName == ""){
-    //     th.innerText = ascending ? th.innerText + " ↑" : th.innerText + " ↓";
-    // }
-    // else{
-    //     th.innerText = ascending ? columnName + " ↑" : columnName + " ↓";
-    // }
     correctColoring();
 }
 
@@ -229,10 +211,6 @@ function correctColoring(){
     }
 }
 
-eventListenerCheckboxes();
-correctColoring();
-
-
 // Update button text and style based on checkbox states
 function updateToggleButton() {
   const checkboxes = document.querySelectorAll('.form-check-input');
@@ -249,23 +227,43 @@ function updateToggleButton() {
 }
 
 function toggleCheckboxes(event) {
-    if (event){
-        event.stopPropagation();
-        event.preventDefault();
-    }
+    event.stopPropagation();
+    event.preventDefault();
     const checkboxes = document.querySelectorAll('.form-check-input');
     const anyChecked = Array.from(checkboxes).some(cb => cb.checked);
     
     checkboxes.forEach(cb => cb.checked = !anyChecked);
     updateToggleButton();
+    updateTable(); 
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-  // Wait for Papa Parse to finish loading the data
   setTimeout(() => {
     const checkboxes = document.querySelectorAll('.form-check-input');
     checkboxes.forEach(cb => {
       cb.addEventListener('change', updateToggleButton);
     });
+    
+    eventListenerCheckboxes();
+    correctColoring();
   }, 500);
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('locality-checkbox').addEventListener('click', function(e) {
+        e.stopPropagation();
+    });
+
+    // Optional: Clear search when dropdown is closed
+    document.getElementById('select_locality').addEventListener('hidden.bs.dropdown', function() {
+        const searchInput = document.getElementById('locality-checkbox');
+        searchInput.value = '';
+        
+        // Show all items again
+        const localityDropdown = document.getElementById('locality-dropdown');
+        const checkboxItems = localityDropdown.querySelectorAll('li.locality-dropdown');
+        checkboxItems.forEach(item => {
+            item.style.display = '';
+        });
+    });
 });
