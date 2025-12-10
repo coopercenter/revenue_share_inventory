@@ -109,11 +109,11 @@
       const data = results.data;
       const tbody = document.getElementById("table-body");
 	  const locality_dropdown = document.getElementById("locality-dropdown")
-      tbody.innerHTML = ""; // clear existing rows
+      tbody.innerHTML = ""; 
 	  locality_dropdown.innerHTML = "";
 
       data.forEach(row => {
-        if (!row.Locality) return; // skip empty lines
+        if (!row.Locality) return; 
         const tr = document.createElement("tr");
 
         tr.innerHTML = `
@@ -121,7 +121,7 @@
           <td class="column2">${row["Date of Action"] || ""}</td>
           <td class="column3">${row["Rate Adopted ($/MW)"] || ""}</td>
           <td class="column6">${row["Status"] || ""}</td>
-          <td class="column6">${row["Solar Storage or Both"] || ""}</td>
+          <td class="column7">${row["Solar Storage or Both?"] || ""}</td>
           <td class="column4">${row["Ordinance"] ? `<a href="${row["Ordinance"]}" target="_blank">Link to Ordinance</a>` : ""}</td>
           <td class="column5">${row["Other Relevant Links/Notes"] ? `<a href="${row["Other Relevant Links/Notes"]}" target="_blank">Link</a>` : ""}</td>
         `;
